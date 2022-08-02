@@ -8,6 +8,32 @@ import (
 
 // ValueType the type for JSON element
 type ValueType int
+type NamedArray struct {
+	Name string
+	values []interface{}
+  }
+  
+  func main() {
+	data := [...]int{1, 2, 3, 4, 5}
+	interfaced_data := make([]interface{}, len(data))
+	for i, v := range data{
+	  interfaced_data[i] = v
+	}
+	int_arr := NamedArray{Name: "Int Array", values: interfaced_data}
+	fmt.Println(int_arr)
+	// fmt.Println(int_arr.Sum()) -- uncomment to run Sum
+  
+	data_float := [...]float64{0.1, 0.2, 0.3, 0.4, 0.5}
+	interfaced_data_float := make([]interface{}, len(data_float))
+	for i, v := range data_float{
+	  interfaced_data_float[i] = v
+	}
+	float_arr := NamedArray{Name: "Float Array", values: interfaced_data_float}
+	fmt.Println(float_arr)
+	// fmt.Println(int_arr.Sum()) -- uncomment to run Sum
+  }
+  
+
 
 const (
 	// InvalidValue invalid JSON element
