@@ -2,9 +2,9 @@ name: Foresight CI Workflow
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "coverage" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "coverage" ]
   workflow_dispatch:
   schedule:
     - cron: "0 1 * * *"
